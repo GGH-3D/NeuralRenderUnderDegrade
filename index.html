@@ -52,11 +52,11 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Neural Rendering under Degradation: A Survey of NeRF and 3DGS in Imperfect Conditions</h1>
+            <h1 class="title is-1 publication-title">Neural Rendering in the Wild: A Comprehensive Survey on Robust Neural 3D Representation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                Guihuan Guo<sup>1</sup>, Jincen Ou<sup>1</sup>, Shi Luo<sup>1</sup>, Shurui Peng<sup>1</sup>, Yuxin Hu<sup>1</sup>, Yanyin He<sup>1</sup>,</span>
+                Guihuan Guo<sup>1</sup>, Jincen Ou<sup>1</sup>, Shurui Peng<sup>1</sup>, Shi Luo<sup>1</sup>, Yuxin Hu<sup>1</sup>, Yanyin He<sup>1</sup>,</span>
               <span class="author-block">
                      <a href="https://chaoren88.github.io/" target="_blank">Chao Ren</a><sup>1</sup>,</span>
               <span class="author-block">
@@ -86,15 +86,15 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+<!--                    <span class="link-block">-->
+<!--                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"-->
+<!--                      class="external-link button is-normal is-rounded is-dark">-->
+<!--                      <span class="icon">-->
+<!--                        <i class="fas fa-file-pdf"></i>-->
+<!--                      </span>-->
+<!--                      <span>Supplementary</span>-->
+<!--                    </a>-->
+<!--                  </span>-->
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -108,15 +108,15 @@
                 </span>
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+<!--                <span class="link-block">-->
+<!--                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"-->
+<!--                  class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                    <i class="ai ai-arxiv"></i>-->
+<!--                  </span>-->
+<!--                  <span>arXiv</span>-->
+<!--                </a>-->
+<!--              </span>-->
             </div>
           </div>
         </div>
@@ -143,13 +143,14 @@
 <p style="font-size:18px;">
   <br><br>
 
-  Neural rendering techniques, represented by NeRF and 3D Gaussian Splatting (3DGS),
-          have achieved remarkable progress in 3D reconstruction and novel view synthesis,
-          and have demonstrated significant potential in applications such as VR/AR, autonomous
-          driving, and cultural heritage preservation. However, these methods heavily rely on
-          high-quality input images. When confronted with degradations commonly encountered in
-          real-world scenarios, the rendering quality degrades substantially,
-          which severely limits their practical applicability.
+  Neural rendering technologies, represented by Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS),
+  have revolutionized 3D scene representation, offering photorealistic rendering quality, and demonstrated significant
+  potential in applications such as VR/AR, autonomous driving, and cultural heritage preservation. However, they
+  heavily rely on ideal input data. In the wild, degradation factors such as blur, noise, and adverse weather inevitably
+  estroy multi-view geometric consistency, leading to a notable decline in rendering quality.
+  Although numerous studies have attempted to address these challenges, existing research remains fragmented and
+  mostly confined for specific degradation tasks, lacking systematic theoretical synthesis. To bridge this gap, we presents
+  the first comprehensive survey on neural rendering in the wild.
    <br><br>
 
 </p>
@@ -172,17 +173,17 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-2">Various Degradation</h2>
+        <h2 class="title is-2">Various Degradation In The Wild </h2>
         <div class="content has-text-justified">
 
           <p style="font-size:16px;">
-            Neural rendering performance depends on
-            clear, high-resolution inputs. In real-world scenarios,
-            however, images often suffer from degradations such as blur, uneven lighting, low resolution, adverse
-            weather, and occlusions, which severely affect rendering quality and
-            downstream tasks like 3D reconstruction and scene understanding. To enhance robustness in such
-            conditions, many studies have aimed to reduce the impact of single or multiple degradations on
-            rendering quality.
+            The performance of neural rendering heavily relies on clear, high-resolution input images. However,
+            in the wild scenarios, input data often suffers from degradation such as blur, uneven illumination,
+            low resolution, adverse weather conditions, and occlusions. These factors can significantly degrade
+            rendering quality, affecting the accuracy of 3D reconstruction and the performance of downstream tasks
+            such as semantic segmentation, object recognition, and scene understanding. To address this issue and
+            improve the applicability of neural rendering in real-world settings, numerous studies have proposed
+            methods to mitigate the impact of single or multiple degradation on rendering quality in the wild.
             </p>
         </div>
 <!--         <div class="item">-->
@@ -217,7 +218,29 @@
     </div>
   </div>
 </section>
+<!--  datasets compares-->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Datasets and Evaluation</h2>
+        <div class="content has-text-justified">
 
+          <p style="font-size:16px;">  High-quality datasets are crucial for evaluating the performance of neural rendering methods,
+            particularly NeRF and 3DGS, which rely on per-scene optimization and require dense multi-view images with accurate camera pose. We
+            summarize popular used datasets in neural rendering in the wild.
+            Based on their application scope, we categorize them into universal datasets and task-specific datasets. </p>
+        </div>
+          <img src="static/images/dataset.png" alt="MY ALT TEXT"/>
+          <p>We also consolidate key evaluation results of representative methods on common benchmark datasets across tasks,
+            enabling a more intuitive comparison of their performance.</p>
+        <img src="static/images/metricscompare.png" alt="MY ALT TEXT"/>
+<!--         </div>-->
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- Image carousel -->
 <!--<section class="hero is-small">-->
 <!--  <div class="hero-body">-->
@@ -265,13 +288,13 @@
 
         </p>
         </div>
-        <img src="static/images/Deblurringtask.png" alt="Future works"/>
-          <img src="static/images/illumanationtask.png" alt="Future works"/>
-        <img src="static/images/SRtask.png" alt="Future works"/>
-        <img src="static/images/weathertask.png" alt="Future works"/>
-        <img src="static/images/underwatertask.png" alt="Future works"/>
-        <img src="static/images/posttask.png" alt="Future works"/>
-        <img src="static/images/othertask.png" alt="Future works"/>
+        <img src="static/images/futuretasks.png" alt="Future works"/>
+<!--          <img src="static/images/illumanationtask.png" alt="Future works"/>-->
+<!--        <img src="static/images/SRtask.png" alt="Future works"/>-->
+<!--        <img src="static/images/weathertask.png" alt="Future works"/>-->
+<!--        <img src="static/images/underwatertask.png" alt="Future works"/>-->
+<!--        <img src="static/images/posttask.png" alt="Future works"/>-->
+<!--        <img src="static/images/othertask.png" alt="Future works"/>-->
       </div>
       </div>
     </div>
